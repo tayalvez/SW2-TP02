@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <p style="font-size:large; margin-left:10px">Cadastrar BL</p>
+    <form action="/BL/Adiciona" method="POST" style="margin:10px">
+        <div style="margin-bottom:15px">
+            <label for="numero">Número do BL: </label>
+            <input id="numero" name="bl.Numero" />
+        </div>
+        <div style="margin-bottom:15px">
+
+            <label for="consignee">Nome do Consignee: </label>
+            <input id="consignee" name="bl.Consignee" />
+        </div>
+        <div style="margin-bottom:15px">
+            <label for="navio">Nome do navio: </label>
+            <input id="navio" name="bl.Navio" />
+            </br>
+            </br>
+            <input value="Cadastrar" style="width:210px" type="submit" />
+        </div>
+    </form>
+
+</body>
+</html>

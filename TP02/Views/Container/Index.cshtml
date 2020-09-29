@@ -1,0 +1,48 @@
+﻿@model IList<TP02.Models.Container>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Containeres</title>
+</head>
+<body>
+    <div  style="text-align: center">
+        <h1>Containeres Cadastrados</h1>
+
+        <table style=" background-color:lightblue; color:white;
+        border-spacing: 5px;
+        margin-left: 410px;
+        border: 1px solid pink;
+        width: 500px;
+        border-collapse: collapse;">
+            <thead>
+                <tr>
+                    
+                    <th>Numero: </th>
+                    <th>Tipo: </th>
+                    <th>Tamanho: </th>
+                    <th>BL: </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Container in Model)
+                {
+            <tr>
+                <td>@Container.Id</td>
+                <td>@Container.Numero</td>
+                <td>@Container.Tipo</td>
+                <td>@Container.Tamanho</td>
+ 
+            </tr>           
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

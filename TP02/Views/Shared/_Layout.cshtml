@@ -1,0 +1,65 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/Scripts/modernizr-2-6-2.js")
+</head>
+<body>
+    <header class="nav-header">
+        <div class="nav-list" >
+            <form method="POST" >
+                <table class="table-bordered" width="100%" border="0">
+                    <tr>
+                        <th >
+                            <input style="        width: 100%;
+                                height: 28px;
+                                color: white;
+                                background-color: #ffcccc;
+                                border: none" type="submit" value="Início" formaction="http://localhost:51886/" />
+                        </th>
+                        <th>
+                            <input style="        width: 100%;
+                                height: 28px;
+                                color: white;
+                                background-color: #ffcccc;
+                                border: none" type="submit" value="Cadastrar Container" formaction="http://localhost:51886/Container/Form" />
+                        </th>
+                        <th>
+                            <input style="        width: 100%;
+                                height: 28px;
+                                color: white;
+                                background-color: #ffcccc;
+                                border: none" type="submit" value="Cadastrar BL" formaction="http://localhost:51886/BL/Form" />
+                        </th>
+                        <th>
+                            <input type="submit" style="        width: 100%;
+                                color: white;
+                                height: 28px;
+                                background-color: #ffcccc;
+                                border: none" value="Relatório" formaction="http://localhost:51886/BL/Relatorio" />
+                        </th>
+                    </tr>
+                </table>
+            </form>
+            <div class="span9">
+                @RenderSection("featured", required: false)
+                <div class="row-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+    </div>
+        
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+
+    
+</body>
+</html>

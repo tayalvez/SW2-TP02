@@ -1,0 +1,50 @@
+﻿@Html.ValidationSummary()
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@model IList<TP02.Models.BL>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bill of Ladding</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1>BL's Cadastrados</h1>
+
+
+        <table style=" background-color:lightblue; color:white;
+        border-spacing: 5px;
+        margin-left: 410px;
+        border: 1px solid pink;
+        width: 500px;
+        border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>BL: </th>
+                    <th>Consignee: </th>
+                    <th>Navio: </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var BL in Model)
+                {
+            <tr>
+                <td>@BL.Id</td>
+                <td>@BL.Numero</td>
+                <td>@BL.Consignee</td>
+                <td>@BL.Navio</td>
+            </tr>}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

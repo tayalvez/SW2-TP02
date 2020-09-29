@@ -1,0 +1,58 @@
+﻿@model IList<TP02.Models.BL>
+@Html.ValidationSummary()
+
+<html>
+<head>
+
+</head>
+<body>
+    <br/>
+    <div class="tab-content">
+        @foreach (var bl in ViewBag.BL)
+        {
+            <div class="container">
+
+                <table class="table" >
+                    <tr class="popover-title">
+                        <td>
+                            BL: @bl.Numero
+                        </td>
+                        <td>
+                            Consignee: @bl.Consignee
+                        </td>
+                        <td>
+                            Navio: @bl.Navio
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table" align="center">
+                    <thead>
+                        <tr>
+                            <th>Container: </th>
+                            <th>Tipo: </th>
+                            <th>Tamanho: </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cont in ViewBag.Container)
+                        {
+                            if (bl.Id == cont.BlId)
+                            {
+                                <tr>
+                                    <th>@cont.Numero</th>
+                                    <th>@cont.Tipo</th>
+                                    <th>@cont.Tamanho</th>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+</body>
+</html>
+
+

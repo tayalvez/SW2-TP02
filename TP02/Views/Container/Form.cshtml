@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <p style="font-size:large">Cadastrar container</p>
+    <form action="/Container/Adiciona" method="POST" style="margin-top: 15px">
+        <div style="margin-bottom:15px">
+            <label for="numero">Número do Conteiner: </label>
+            <input id="numero" name="container.Numero" />
+        </div>
+        <div style="margin-bottom:15px">
+            <label for="tipo">Tipo do container: </label>
+            <input id="tipo" name="container.Tipo" />
+        </div>
+
+        <div style="margin-bottom:15px">
+            <label for="tamanho">Tamanho do container: </label>
+            <input id="tamanho" name="container.Tamanho" />
+        </div>
+        <div>
+            <label for="blid">Número do BL: </label>
+            <input id="blid" name="bl.id" />
+            </br>
+            </br>
+
+            <input style="width: 210px" value="Cadastrar" type="submit" />
+        </div>
+    </form>
+
+</body>
+</html>
+

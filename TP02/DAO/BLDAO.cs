@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using TP02.Models;
+
+namespace TP02.DAO
+{
+    public class BLDAO
+    {
+        public void Adiciona(BL Bl)
+        {
+            using (var context = new ListagemContext())
+            {
+                context.Bls.Add(Bl);
+                context.SaveChanges();
+            }
+        }
+
+        public IList<BL> Lista()
+        {
+            
+            using (var context = new ListagemContext())
+            {
+                List<BL> blList = new List<BL>();
+                blList = context.Bls.ToList();
+                return blList;
+            }
+        }
+
+        public BL BuscaPorId(int id)
+        {
+            using (var context = new ListagemContext())
+            {
+                return context.Bls.Where(p => p.Id == id).FirstOrDefault();
+            }
+        }
+
+        public void Atualiza(BL Bl)
+        {
+            using (var context = new ListagemContext())
+            {
+                context.Entry(Bl).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
+        public void Exclui(int id)
+        {
+            using (var context = new ListagemContext())
+            {
+                BL blDeletado = context.Bls.Where(p => p.Id == id).FirstOrDefault();
+                context.Bls.Remove(blDeletado);
+                context.SaveChanges();
+            }
+        }
+    }
+}
